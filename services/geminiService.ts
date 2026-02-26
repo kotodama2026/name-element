@@ -55,6 +55,7 @@ export const generateKotodamaReading = async (name: string, element: ElementType
     
     **Instructions:**
     1. **Per-Character Analysis**: Provide nature, symbol, talent, caution, and luckTip for EACH character.
+       - **Important**: If the keywords for a character include "注意点：" or "開運：", prioritize using that specific information for the "caution" and "luckTip" fields.
     2. **Summary**: Provide a summary mentioning the Primary Element (${element}).
     3. **Output**: Return ONLY a valid JSON object.
 
