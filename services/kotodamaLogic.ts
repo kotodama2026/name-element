@@ -25,14 +25,14 @@ export const ELEMENTS_CONFIG: Record<ElementType, ElementData> = {
   },
   [ElementType.WIND]: {
     type: ElementType.WIND,
-    color: 'text-amber-400',
-    bgColor: 'bg-amber-50',
-    borderColor: 'border-amber-200',
-    textColor: 'text-amber-600',
-    gradient: 'from-amber-400 to-amber-600',
+    color: 'text-yellow-400',
+    bgColor: 'bg-yellow-50',
+    borderColor: 'border-yellow-200',
+    textColor: 'text-yellow-700',
+    gradient: 'from-yellow-400 to-yellow-600',
     icon: '🍃',
     description: '軽やか・社交的',
-    hexColor: '#d97706',
+    hexColor: '#facc15',
   },
   [ElementType.EARTH]: {
     type: ElementType.EARTH,
@@ -59,11 +59,11 @@ export const ELEMENTS_CONFIG: Record<ElementType, ElementData> = {
 };
 
 const CHAR_DATA: Record<string, KotodamaCharData> = {
-  'あ': { element: ElementType.FIRE, value: 5, symbol: '天の岩戸開き', image: '新しい希望', keyword: 'イチからはじめる、未知の可能性、行動する' },
-  'い': { element: ElementType.FIRE, value: 3, symbol: '3歳の子ども', image: '永遠の3歳児', keyword: '純粋、好きなことを楽しむ、無理な我慢をしない' },
-  'う': { element: ElementType.EARTH, value: 3, symbol: '青い梅', image: '時間をかける', keyword: 'ゆっくりと進める、あせらない、過去の経験を活かす' },
-  'え': { element: ElementType.FIRE, value: 4, symbol: '枝', image: '自分の行きたいほうに行く', keyword: '栄光、自信をもって行動する、遠慮せずに受け取る' },
-  'お': { element: ElementType.EARTH, value: 5, symbol: 'お地蔵さん', image: '影の実力者', keyword: '落ち着いて考える、優しさ、包容力' },
+  'あ': { element: ElementType.FIRE, value: 5, symbol: '天の岩戸開き', image: '新しい希望', keyword: 'イチからはじめる、未知の可能性、行動する。注意点：自分一人で抱え込みがち。開運：周りの人に助けを求めること' },
+  'い': { element: ElementType.FIRE, value: 3, symbol: '3歳の子ども', image: '永遠の3歳児', keyword: '純粋、好きなことを楽しむ、無理な我慢をしない。注意点：飽きっぽさ、わがまま。開運：ワクワクすることを最優先にすること' },
+  'う': { element: ElementType.EARTH, value: 3, symbol: '青い梅', image: '時間をかける', keyword: 'ゆっくりと進める、あせらない、過去の経験を活かす。注意点：慎重になりすぎること。開運：一歩ずつ着実に進むこと' },
+  'え': { element: ElementType.FIRE, value: 4, symbol: '枝', image: '自分の行きたいほうに行く', keyword: '栄光、自信をもって行動する、遠慮せずに受け取る。注意点：プライドの高さ。開運：自分の感性を信じること' },
+  'お': { element: ElementType.EARTH, value: 5, symbol: 'お地蔵さん', image: '影の実力者', keyword: '落ち着いて考える、優しさ、包容力。注意点：消極的になりがち。開運：自分の考えを言葉にしてみること' },
   'か': { element: ElementType.FIRE, value: 5, symbol: '刀', image: '可能性を切り開く', keyword: '決断力がある、向上心が強い、熱血、頭の回転が速い、理想が高い。注意点：感情のコントロール、スピードが速すぎる。開運：今の自分を認めること' },
   'き': { element: ElementType.WIND, value: 3, symbol: '木', image: '時間をかけて成長する', keyword: '勉強家、自己流、知的好奇心、几帳面、質問好き、空気を察する。注意点：生真面目、傷つきやすい、気が散る。開運：学んだ知識を人にシェアすること' },
   'く': { element: ElementType.EARTH, value: 4, symbol: '井戸', image: '情報をためて活かす', keyword: '研究家、観察力、分析が得意、想いをくみ取る、優秀なサポーター。注意点：我慢しがち、リスク回避。開運：繊細な感性を大切にすること' },
@@ -108,26 +108,26 @@ const CHAR_DATA: Record<string, KotodamaCharData> = {
   'ー': { element: ElementType.VOID, value: 1, symbol: 'ー', image: 'ー', keyword: 'ー' },
 };
 
-const normalizeChar = (char: string): { 
-  baseChar: string; 
-  adjustment: number; 
-  isVoiced: boolean; 
-  isSemiVoiced: boolean; 
+const normalizeChar = (char: string): {
+  baseChar: string;
+  adjustment: number;
+  isVoiced: boolean;
+  isSemiVoiced: boolean;
   isSmall: boolean;
 } => {
   const dakutenMap: Record<string, string> = {
-    'が':'か', 'ぎ':'き', 'ぐ':'く', 'げ':'け', 'ご':'こ',
-    'ざ':'さ', 'じ':'し', 'ず':'す', 'ぜ':'せ', 'ぞ':'そ',
-    'だ':'た', 'ぢ':'ち', 'づ':'つ', 'で':'て', 'ど':'と',
-    'ば':'は', 'び':'ひ', 'ぶ':'ふ', 'べ':'へ', 'ぼ':'ほ',
-    'ゔ':'う'
+    'が': 'か', 'ぎ': 'き', 'ぐ': 'く', 'げ': 'け', 'ご': 'こ',
+    'ざ': 'さ', 'じ': 'し', 'ず': 'す', 'ぜ': 'せ', 'ぞ': 'そ',
+    'だ': 'た', 'ぢ': 'ち', 'づ': 'つ', 'で': 'て', 'ど': 'と',
+    'ば': 'は', 'び': 'ひ', 'ぶ': 'ふ', 'べ': 'へ', 'ぼ': 'ほ',
+    'ゔ': 'う'
   };
   const handakutenMap: Record<string, string> = {
-    'ぱ':'は', 'ぴ':'ひ', 'ぷ':'ふ', 'ぺ':'へ', 'ぽ':'ほ'
+    'ぱ': 'は', 'ぴ': 'ひ', 'ぷ': 'ふ', 'ぺ': 'へ', 'ぽ': 'ほ'
   };
   const smallMap: Record<string, string> = {
-    'ぁ':'あ', 'ぃ':'い', 'ぅ':'う', 'ぇ':'え', 'ぉ':'お',
-    'っ':'つ', 'ゃ':'や', 'ゅ':'ゆ', 'ょ':'よ', 'ゎ':'わ'
+    'ぁ': 'あ', 'ぃ': 'い', 'ぅ': 'う', 'ぇ': 'え', 'ぉ': 'お',
+    'っ': 'つ', 'ゃ': 'や', 'ゅ': 'ゆ', 'ょ': 'よ', 'ゎ': 'わ'
   };
 
   if (dakutenMap[char]) return { baseChar: dakutenMap[char], adjustment: 1, isVoiced: true, isSemiVoiced: false, isSmall: false };
@@ -137,13 +137,13 @@ const normalizeChar = (char: string): {
   return { baseChar: char, adjustment: 0, isVoiced: false, isSemiVoiced: false, isSmall: false };
 };
 
-export const calculateScores = (lastName: string, firstName: string): { 
-  details: CharacterDetail[], 
+export const calculateScores = (lastName: string, firstName: string): {
+  details: CharacterDetail[],
   lastNameScores: Record<ElementType, number>,
   firstNameScores: Record<ElementType, number>
 } => {
   const details: CharacterDetail[] = [];
-  
+
   const getInitialScores = (): Record<ElementType, number> => ({
     [ElementType.FIRE]: 0, [ElementType.WATER]: 0, [ElementType.WIND]: 0, [ElementType.EARTH]: 0, [ElementType.VOID]: 0,
   });
@@ -171,13 +171,13 @@ export const calculateScores = (lastName: string, firstName: string): {
 
   if (lastName) processPart(lastName, lastNameScores);
   if (firstName) processPart(firstName, firstNameScores);
-  
+
   return { details, lastNameScores, firstNameScores };
 };
 
 export const determinePrimaryElement = (lastNameScores: Record<ElementType, number>, firstNameScores: Record<ElementType, number>): ElementType => {
   const elements = [ElementType.FIRE, ElementType.WATER, ElementType.WIND, ElementType.EARTH, ElementType.VOID];
-  
+
   const combinedScores: Record<ElementType, number> = {
     [ElementType.FIRE]: lastNameScores[ElementType.FIRE] + firstNameScores[ElementType.FIRE],
     [ElementType.WATER]: lastNameScores[ElementType.WATER] + firstNameScores[ElementType.WATER],
